@@ -17,3 +17,20 @@ if (true) {
 }
 console.log("first", first);
 console.log("second", second);
+
+/**
+ * .call,.apply and .bind
+ * call and apply => are used to execute the functions in given context
+ * .bind => Returns the new function in given context
+ */
+
+function FunToChangeContext() {
+    console.log(this.name)
+}
+var context = {
+    name: "Gagan"
+}
+FunToChangeContext.call(context);
+FunToChangeContext.apply(context);
+var newfun = FunToChangeContext.bind(context);
+newfun();
